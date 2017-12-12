@@ -5,6 +5,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,7 +35,11 @@ export function createTranslateLoader(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
-        AppRoutingModule
+        AppRoutingModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        AngularFireAuthModule,
+        AngularFireDatabaseModule
     ],
     declarations: [AppComponent],
     providers: [AuthGuard],
