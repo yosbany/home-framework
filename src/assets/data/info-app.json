@@ -1,0 +1,20 @@
+{
+    "name": "Home Administration",
+    "details": "Home administration...",
+    "modules": [
+        {
+            "name": "Main",
+            "details": "Main module",
+            "icon": "fa-home",
+            "bgClass": "primary",
+            "locked": true
+        },
+        {
+            "name": "Finance",
+            "details": "Family finance module",
+            "icon": "fa-credit-card",
+            "bgClass": "success",
+            "locked": false
+        }
+    ]
+}  
